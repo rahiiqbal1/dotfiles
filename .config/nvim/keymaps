@@ -1,0 +1,124 @@
+List of keymaps: 
+
+-- lsp:
+
+ vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+ vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+ vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
+ vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+ vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+ vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
+ vim.keymap.set("n", "<leader>fe", function() vim.diagnostic.setloclist() end, opts)
+ vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+ vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
+ vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+ vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+ end)
+
+-- harpoon:
+
+vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
+vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+
+-- fugitive:
+
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
+vim.keymap.set("n", "<leader>p", function()
+    vim.cmd [[ Git push ]]
+end, opts)
+
+-- rebase always
+vim.keymap.set("n", "<leader>P", function()
+    vim.cmd [[ Git pull --rebase ]]
+end, opts)
+
+-- NOTE: It allows me to easily set the branch i am pushing and any tracking
+-- needed if i did not set the branch up correctly
+vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);
+
+-- telescope:
+
+vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+vim.keymap.set('n', '<leader>ps', function() grep
+	
+-- nvim-cmp:
+
+  mapping = cmp.mapping.preset.insert({
+    ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+    ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+    ["<CR>"] = cmp.mapping.confirm({ select = false }),
+  }),
+
+-- undotree:
+
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-- remap:
+m.g.mapleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>")
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")  -- J and K move block in visual mode
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "J", "mzJ`z") -- Cursor stays in middle when doing J
+vim.keymap.set("n", "<C-d>", "<C-d>zz")  -- ctrlD and U keep cursor in middle
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv") -- Keeps cursor in the middle during searches
+
+vim.keymap.set("x", "<leader>p", "\"_dP") -- Keeps foo in register when pasting over a highlighted bar
+
+vim.keymap.set("n", "<leader>y", "\"+y") -- leader y yanks to system clipboard
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
+
+vim.keymap.set("n", "<leader>d", "\"_d") -- leader d deletes to void instead of overwriting copy register
+vim.keymap.set("v", "<leader>d", "\"_d")
+
+vim.keymap.set("n", "Q", "<nop>")
+
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>") -- Uses tmux to switch projects
+vim.keymap.set("n", "<leader>f", function()
+    vim.lsp.buf.format()
+end)
+
+
+vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz") -- quickfix navigation
+vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz") -- quickfix navigation
+vim.keymap.set("n", "<leader>q", "<cmd>cclose<CR>") -- quickfix navigation
+vim.keymap.set("n", "<leader>lj", "<cmd>lnext<CR>zz") -- loclist navigation
+vim.keymap.set("n", "<leader>lk", "<cmd>lprev<CR>zz") -- loclist navigation
+vim.keymap.set("n", "<leader>lq", "<cmd>lclose<CR>") -- loclist navigation
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- leader s opens for replacement of current word below cursor
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- leader x makes the current file executable
+
+-- vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>"); -- Something with packer
+
+vim.keymap.set("n", "<leader><leader>", function() -- sources current file
+    vim.cmd("source")
+
+leader r, saves and executes code
+
+vim.keymap.set("n", "<leader>pm", "<cmd>MarkdownPreview<CR>")
+
+vim.keymap.set("n", "<leader>ca", "<cmd>CondaActivate<CR>")
+
+vim.keymap.set("n", "<leader>wc", "<cmd>VimtexCountWords<CR>")

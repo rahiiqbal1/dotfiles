@@ -1,0 +1,241 @@
+# SkyyySi's Nordic i3 config file
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+### Variables for settings (This makes changing them WAY easyer!) ###
+set $mod                             Mod4
+set $smod                            Shift
+set $wm_setting_font                 pango:JetBrainsMono Nerd Font 13
+set $wm_setting_gap_width            5
+set $wm_setting_gap_height           5
+set $wm_setting_gap_inner            5
+set $wm_setting_border_size          4
+set $wm_setting_key_left             h
+set $wm_setting_key_down             j
+set $wm_setting_key_up               k
+set $wm_setting_key_right            l
+
+set $wm_setting_app_terminal         wezterm
+set $wm_setting_app_browser          firefox
+# set $wrrsetting_app_launcher         rofi
+set $rofi_comps_dir                  $HOME/.config/rofi/bin
+set $wm_setting_app_compositor       picom
+
+set $wm_color_border_active_bg       #81A1C1
+set $wm_color_border_active_fg       #3B4252
+set $wm_color_border_inactive_bg     #3B4252
+set $wm_color_border_inactive_fg     #D8DEE9
+set $wm_color_background             #2E3440
+
+set $bar_setting_position            top
+set $bar_setting_mode                dock
+set $bar_setting_font                pango:JetBrainsMono Nerd Font 13
+set $bar_setting_separator           " - "
+set $bar_setting_statusCommand       i3status
+set $bar_setting_trayoutput          full
+
+set $bar_color_background            #11111b
+set $bar_color_foreground            #D8DEE9
+set $bar_color_statusline            #D8DEE9
+set $bar_color_separator             #D8DEE9
+
+set $bar_color_workspace_focused_bg  #a6e3a1
+set $bar_color_workspace_focused_fg  #2E3440
+set $bar_color_workspace_active_bg   #f38ba8
+set $bar_color_workspace_active_fg   #2E3440
+set $bar_color_workspace_inactive_bg #f38ba8
+set $bar_color_workspace_inactive_fg #2E3440
+set $bar_color_workspace_urgent_bg   #D08770
+set $bar_color_workspace_urgent_fg   #2E3440
+
+# Catppuccin mocha colours:
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $yellow    #f9e2af
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
+
+# Set scaling
+exec_always --no-startup-id xrandr --scale 2
+
+# Swap caps lock and escape:
+exec_always --no-startup-id xmodmap /home/rahi/.config/i3/swapkeys
+
+# Set dark theme REQUIRES GNOME ON SYSTEM
+exec_always --no-startup-id /usr/libexec/gsd-xsettings
+
+### Applications ###
+# # Start app launcher:
+bindsym $mod+d exec $rofi_comps_dir/launcher
+
+# # bindsym $mod+r exec $rofi_comps_dir/runner
+# bindsym $mod+p exec $rofi_comps_dir/powermenu
+# bindsym $mod+s exec $rofi_comps_dir/screenshot
+
+# Start terminal
+bindsym $mod+t exec $wm_setting_app_terminal
+# Start a web browser
+bindsym $mod+f exec $wm_setting_app_browser
+
+# Run a window compositor, picom (for effects like transparency or full VSync)
+exec_always --no-startup-id $wm_setting_app_compositor
+
+# Background
+exec_always feh --bg-scale ~/Pictures/mountain-dark.jpg
+
+### Workspaces ###
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1  "    1    "
+set $ws2  "    2    "
+set $ws3  "    3    "
+set $ws4  "    4    "
+set $ws5  "    5    "
+set $ws6  "    6    "
+set $ws7  "    7    "
+
+# Switch to workspace n
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+
+# Move focused container to workspace n
+bindsym $mod+$smod+1 move container to workspace $ws1
+bindsym $mod+$smod+2 move container to workspace $ws2
+bindsym $mod+$smod+3 move container to workspace $ws3
+bindsym $mod+$smod+4 move container to workspace $ws4
+bindsym $mod+$smod+5 move container to workspace $ws5
+bindsym $mod+$smod+6 move container to workspace $ws6
+bindsym $mod+$smod+7 move container to workspace $ws7
+
+### Window sizes and positions ###
+# Change focus
+bindsym $mod+$wm_setting_key_left        focus left
+bindsym $mod+$wm_setting_key_down        focus down
+bindsym $mod+$wm_setting_key_up          focus up
+bindsym $mod+$wm_setting_key_right       focus right
+
+# Move focused window
+bindsym $mod+$smod+$wm_setting_key_left  move left
+bindsym $mod+$smod+$wm_setting_key_down  move down
+bindsym $mod+$smod+$wm_setting_key_up    move up
+bindsym $mod+$smod+$wm_setting_key_right move right
+
+# Resize window (you can also use the mouse for that)
+mode "resize" {
+#	These bindings trigger as soon as you enter the resize mode
+
+#	Pressing left will shrink the window’s width.
+#	Pressing right will grow the window’s width.
+#	Pressing up will shrink the window’s height.
+#	Pressing down will grow the window’s height.
+	bindsym $wm_setting_key_left  resize shrink width 10 px or 10 ppt
+	bindsym $wm_setting_key_down  resize grow height 10 px or 10 ppt
+	bindsym $wm_setting_key_up    resize shrink height 10 px or 10 ppt
+	bindsym $wm_setting_key_right resize grow width 10 px or 10 ppt
+
+#	Resize the gap width and height
+	bindsym $smod+$wm_setting_key_left  gaps horizontal minus 5
+	bindsym $smod+$wm_setting_key_down  gaps horizontal plus 5
+	bindsym $smod+$wm_setting_key_up    gaps vertical minus 5
+	bindsym $smod+$wm_setting_key_right gaps vertical plus 5
+
+#	Back to normal: Enter or Escape or $mod+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+### Gaps ###
+gaps inner      $wm_setting_gap_inner
+# gaps horizontal $wm_setting_gap_width
+# gaps vertical   $wm_setting_gap_height
+smart_gaps on
+
+### Borders ###
+for_window [class=.*] border pixel $wm_setting_border_size
+default_border pixel $wm_setting_border_size
+default_floating_border pixel $wm_setting_border_size
+hide_edge_borders smart_no_gaps
+
+### Colors ###
+# class                 border                       background                   text                         indicator                    
+client.focused          $mauve                       $mauve                       $mantle                      $rosewater   
+client.focused_inactive $overlay0                    $base                        $text                        $overlay0 
+client.unfocused        $overlay0                    $base                        $text                        $overlay0 
+client.urgent           $peach                       $base                        $peach                       $peach 
+client.placeholder      $overlay0                    $base                        $text                        $overlay0 
+client.background       $base
+
+### i3bar ###
+bar {
+	position         $bar_setting_position
+	mode             $bar_setting_mode
+	font             $bar_setting_font
+	separator_symbol $bar_setting_separator
+	status_command   $bar_setting_statusCommand
+	tray_output      $bar_setting_trayoutput
+
+	colors {
+		background   $bar_color_background
+		statusline   $bar_color_statusline
+		separator    $bar_color_separator
+
+		focused_workspace  $bar_color_workspace_focused_bg  $bar_color_workspace_focused_bg  $bar_color_workspace_focused_fg
+		active_workspace   $bar_color_workspace_active_bg   $bar_color_workspace_active_bg   $bar_color_workspace_active_fg
+		inactive_workspace $bar_color_workspace_inactive_bg $bar_color_workspace_inactive_bg $bar_color_workspace_inactive_fg
+		urgent_workspace   $bar_color_workspace_urgent_bg   $bar_color_workspace_urgent_bg   $bar_color_workspace_urgent_fg
+	}
+}
+
+bindsym $mod+p bar mode dock
+bindsym $mod+$smod+p bar mode invisible
+
+### Miscellaneous settings ###
+# Set the font used for titlebars (which are hidden here)
+font $wm_setting_font
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Enter fullscreen mode for the focused window
+bindsym f11 fullscreen toggle
+
+# Toggle between tiling and floating
+bindsym $mod+$smod+f floating toggle
+
+# Kill the focused window
+bindsym $mod+w kill
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+$smod+r restart
+
+# Exit i3 (logs you out of your X session)
+bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
