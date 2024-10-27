@@ -1,0 +1,12 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = Rahi Iqbal
+	email = rahi.iqbal1@gmail.com
+[init]
+	defaultBranch = main
+[format]
+	pretty = oneline
+[log]
+	abbrevCommit = true
