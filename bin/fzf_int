@@ -1,0 +1,4 @@
+# Adding fzf to path and integrating:
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Integrating:
+eval "$(fzf --bash)"

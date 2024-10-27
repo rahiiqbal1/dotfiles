@@ -1,0 +1,9 @@
+#!/bin/bash
+# Mounts onedrive to folder "onedrive" in home directory:
+if [ -z "$(ls -A $HOME/onedrive)" ]; then
+rclone --vfs-cache-mode writes mount onedrive: ~/onedrive &
+fi
+# Mounts google drive to folder "goodrive" in home directory:
+#if [ -z "$(ls -A $HOME/goodrive)" ]; then
+#rclone --vfs-cache-mode writes mount goodrive: ~/goodrive &
+#fi
