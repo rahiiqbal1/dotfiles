@@ -161,6 +161,5 @@ if [ -f "/home/rahi/.miniforge3/etc/profile.d/mamba.sh" ]; then
 fi
 # <<< conda initialize <<<
 alias ca="conda activate"
-alias msc="conda activate msc-proj"
 
 [ -f "/home/rahi/.ghcup/env" ] && . "/home/rahi/.ghcup/env" # ghcup-env
