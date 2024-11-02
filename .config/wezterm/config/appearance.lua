@@ -10,7 +10,8 @@ return {
    webgpu_preferred_adapter = gpu_adapters:pick(),
 
    -- color scheme
-color_scheme = "Catppuccin Mocha",
+-- color_scheme = "Catppuccin Mocha",
+color_scheme = "Gruvbox Material (Gogh)",
 
 window_background_opacity = 1,
 --   -- background

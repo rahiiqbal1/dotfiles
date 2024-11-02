@@ -1,5 +1,5 @@
 function colourMyPencils(colour)
-	colour = colour or "catppuccin"
+	colour = colour or "gruvbox"
 	vim.cmd.colorscheme(colour)
 
     require("catppuccin").setup({
