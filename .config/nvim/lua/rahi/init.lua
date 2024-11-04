@@ -1,4 +1,3 @@
-require("rahi.packer")
 require("rahi.remap")
 require("rahi.set")
 require("rahi.execute")
