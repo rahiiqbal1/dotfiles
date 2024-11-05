@@ -1,7 +1,7 @@
 return {
     {
         "sainnhe/gruvbox-material",
-	lazy = false,
+        lazy = false,
         priority = 1000,
         config = function()
             vim.cmd("colorscheme gruvbox-material")
@@ -20,8 +20,6 @@ return {
         build = ":TSUpdate",
     },
     
-    "nvim-treesitter/playground",
-    
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -38,22 +36,23 @@ return {
     "tpope/vim-fugitive",
     
     -- LSP stuff.
-    "stevearc/dressing.nvim",
-    "hrsh7th/nvim-cmp", -- completion plugin
-    "hrsh7th/cmp-buffer", -- source for text in buffer
-    "hrsh7th/cmp-path", -- source for file system paths
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lua",
+    {"stevearc/dressing.nvim", lazy = false},
+    {"hrsh7th/nvim-cmp", lazy = false}, -- completion plugin
+    {"hrsh7th/cmp-buffer", lazy = false}, -- source for text in buffer
+    {"hrsh7th/cmp-path", lazy = false}, -- source for file system paths
+    {"hrsh7th/cmp-nvim-lsp", lazy = false},
+    {"hrsh7th/cmp-nvim-lua", lazy = false},
     -- snippets
-    "L3MON4D3/LuaSnip", -- snippet engine
-    "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    "rafamadriz/friendly-snippets", -- useful snippets
+    {"L3MON4D3/LuaSnip", lazy = false}, -- snippet engine
+    {"saadparwaiz1/cmp_luasnip", lazy = false}, -- for autocompletion
+    {"rafamadriz/friendly-snippets", lazy = false}, -- useful snippets
     {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
+        lazy = false
     },
-    "VonHeikemen/lsp-zero.nvim",
+    {"VonHeikemen/lsp-zero.nvim", lazy = false},
     
     "chentoast/marks.nvim",
     
