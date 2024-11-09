@@ -3,7 +3,7 @@
 sxhkd &
 # compton --config ~/.config/compton/compton.conf -b & 
 picom --config ~/.config/picom/picom.conf -b &
-polybar bar &
+polybar bar -r &
 feh --bg-scale ~/Pictures/Wallpapers/pexels-drift-shutterbug-2085998.jpg &
 # devmon --no-gui &
 # mpd &
