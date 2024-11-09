@@ -13,7 +13,7 @@ return {
 -- color_scheme = "Catppuccin Mocha",
 color_scheme = "Gruvbox Material (Gogh)",
 
-window_background_opacity = 1,
+window_background_opacity = 0.95,
 --   -- background
 --   background = {
 ----      {
