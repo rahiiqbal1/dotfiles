@@ -65,10 +65,10 @@ return {
     
     "tpope/vim-commentary",
     
-    {
-        "kmontocam/nvim-conda",
-        dependencies = {"nvim-lua/plenary.nvim"},
-    },
+    -- {
+    --     "kmontocam/nvim-conda",
+    --     dependencies = {"nvim-lua/plenary.nvim"},
+    -- },
     
     "lukas-reineke/indent-blankline.nvim",
 }
