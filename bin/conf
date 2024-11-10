@@ -1,3 +1,2 @@
-cd /etc/nixos
-sudoedit configuration.nix
+nvim /etc/nixos
 sudo nixos-rebuild switch
