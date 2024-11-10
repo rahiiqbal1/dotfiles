@@ -178,7 +178,7 @@
     neofetch
     # Apps.
     nerdfonts
-    inputs.wezterm.packages.${pkgs.system}.default
+    unstable.foot
     unstable.neovim
     unstable.lf
     firefox

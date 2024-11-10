@@ -4,7 +4,6 @@
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
         unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-        wezterm.url = "github:wez/wezterm?dir=nix";
     };
 
     outputs = {nixpkgs, ...}@inputs: {
