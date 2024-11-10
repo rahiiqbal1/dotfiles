@@ -1,2 +1,0 @@
-sudoedit ~/dotfiles/.config/nixos
-sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos
