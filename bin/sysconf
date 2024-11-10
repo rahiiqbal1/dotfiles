@@ -1,2 +1,2 @@
-nvim /etc/nixos
+nvim ~/dotfiles/.config/nixos
 sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos
