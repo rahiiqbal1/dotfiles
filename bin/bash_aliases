@@ -1,1 +1,2 @@
 alias nvdriver='cat /sys/module/nvidia/version'
+alias rebuild='nixos-rebuild switch --flake ~/dotfiles/.config/nixos'
