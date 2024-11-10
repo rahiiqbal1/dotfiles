@@ -1,0 +1,1 @@
+alias nvdriver='cat /sys/module/nvidia/version'
