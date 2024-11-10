@@ -53,7 +53,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -95,7 +95,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -105,15 +105,6 @@ alias l='ls -CF'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -133,33 +124,8 @@ export NVM_DIR="$HOME/.nvm"
 # entering vi mode by default
 set -o vi
 
-. "$HOME/.cargo/env"
-
-# integrating fzf
-source fzf_int
-
 source lfcd.sh
-
 source startnvim.sh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/rahi/.miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/rahi/.miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/home/rahi/.miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/rahi/.miniforge3/bin:$PATH"
-    fi
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
-unset __conda_setup
-
-if [ -f "/home/rahi/.miniforge3/etc/profile.d/mamba.sh" ]; then
-    . "/home/rahi/.miniforge3/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
-alias ca="conda activate"
-
-[ -f "/home/rahi/.ghcup/env" ] && . "/home/rahi/.ghcup/env" # ghcup-env

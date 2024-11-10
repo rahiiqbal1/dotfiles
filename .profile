@@ -25,23 +25,3 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-# (scripts in ~/bin)
-# mounting drives
-source mnt_drives
-
-# adding additional paths to PATH
-source topath
-
-# setting additional environment variables
-source envars
-
-# setting pop workspace shortcuts
-source pop_workspace_shortcuts
-. "$HOME/.cargo/env"
-#
-# >>> coursier install directory >>>
-export PATH="$PATH:/home/rahi/.local/share/coursier/bin"
-# <<< coursier install directory <<<
-
-[ -f "/home/rahi/.ghcup/env" ] && . "/home/rahi/.ghcup/env" # ghcup-env
