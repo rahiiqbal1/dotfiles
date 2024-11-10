@@ -48,12 +48,12 @@ return {
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
-    {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
-    },
-    "VonHeikemen/lsp-zero.nvim",
+    -- {
+    --     "williamboman/mason.nvim",
+    --     "williamboman/mason-lspconfig.nvim",
+    --     "neovim/nvim-lspconfig",
+    -- },
+    -- "VonHeikemen/lsp-zero.nvim",
     
     "chentoast/marks.nvim",
     
