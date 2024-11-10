@@ -1,17 +1,17 @@
 #!/bin/bash
-# Sets environment variables via .profile:
-
-# set SPARK_HOME variable
-export SPARK_HOME=/opt/spark-3.5.1
-
-# set JAVA_HOME variable
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-
-# setting neovim as editor and opener:
-export EDITOR="nvim"
-
-# adding cuda variable:
-export CUDA_PATH=/usr
-
-# dotnet:
-export DOTNET_ROOT=$HOME/.dotnet
+# # Sets environment variables via .profile:
+# 
+# # set SPARK_HOME variable
+# export SPARK_HOME=/opt/spark-3.5.1
+# 
+# # set JAVA_HOME variable
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+# 
+# # setting neovim as editor and opener:
+# export EDITOR="nvim"
+# 
+# # adding cuda variable:
+# export CUDA_PATH=/usr
+# 
+# # dotnet:
+# export DOTNET_ROOT=$HOME/.dotnet
