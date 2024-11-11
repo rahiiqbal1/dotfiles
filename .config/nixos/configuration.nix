@@ -177,6 +177,7 @@
     gnomeExtensions.pop-shell
     gnomeExtensions.just-perfection
     # CLI tools.
+    wl-clipboard
     gnutar
     gzip
     xz
