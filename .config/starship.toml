@@ -53,7 +53,7 @@ format = 'on [[$symbol $branch ]($style)]($style)'
 
 [git_status]
 style = "bold fg:color_red"
-format = '[[\(($all_status$ahead_behind)\)]($style)]($style)'
+format = '[[\($all_status$ahead_behind\)]($style)]($style)'
 
 [line_break]
 disabled = true
