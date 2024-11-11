@@ -1,3 +1,3 @@
 function sw {
-    alias wrk="cd $PWD"
+    alias gw="cd $PWD"
 }
