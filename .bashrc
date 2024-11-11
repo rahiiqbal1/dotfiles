@@ -120,9 +120,8 @@ fi
 eval "$(starship init bash)"
 eval "$(fzf --bash)"
 
-source lfcd.sh
 source bash_aliases.sh
-source sw.sh
+source functions.sh
 
 # entering vi mode by default
 set -o vi
