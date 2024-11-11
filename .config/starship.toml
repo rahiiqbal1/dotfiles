@@ -1,0 +1,68 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+format = """
+$username\
+$os\
+$directory\
+$git_branch\
+$git_status\
+$line_break$character"""
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#d4be98'
+color_bg1 = '#32302f'
+color_bg3 = '#45403d'
+color_blue = '#7daea3'
+color_aqua = '#89b482'
+color_green = '#a9b665'
+color_orange = '#e78a4e'
+color_purple = '#d3869b'
+color_red = '#ea6962'
+color_yellow = '#d8a657'
+
+[os]
+disabled = true
+style = "fg:color_orange"
+
+[os.symbols]
+NixOS = " "
+
+[username]
+show_always = false
+style_user = "bold fg:color_orange"
+style_root = "bold fg:color_orange"
+format = '[$user ]($style)'
+
+[directory]
+style = "bold fg:color_yellow"
+format = "[$path ]($style)"
+truncation_length = 3
+truncation_symbol = ".../"
+truncate_to_repo = false
+
+[git_branch]
+symbol = ""
+style = "bold fg:color_aqua"
+format = 'on [[$symbol $branch ]($style)]($style)'
+
+[git_status]
+style = "bold fg:color_red"
+format = '[[\(($all_status$ahead_behind)\)]($style)]($style)'
+
+[line_break]
+disabled = true
+
+[character]
+disabled = false
+success_symbol = '[ ❯](bold fg:color_green)'
+error_symbol = '[ ❯](bold fg:color_red)'
+vimcmd_symbol = '[ ](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[ ](bold fg:color_purple)'
+vimcmd_replace_symbol = '[ ](bold fg:color_purple)'
+vimcmd_visual_symbol = '[ ](bold fg:color_yellow)'
