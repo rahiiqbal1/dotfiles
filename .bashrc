@@ -123,3 +123,4 @@ set -o vi
 source lfcd.sh
 source startnvim.sh
 source bash_aliases.sh
+source sw.sh
