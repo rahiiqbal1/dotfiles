@@ -166,6 +166,9 @@
     ];
   };
 
+  # Add ~/bin/ to PATH.
+  environment.homeBinInPath = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
