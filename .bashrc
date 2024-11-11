@@ -117,6 +117,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+eval "$(starship init bash)"
+
 # entering vi mode by default
 set -o vi
 

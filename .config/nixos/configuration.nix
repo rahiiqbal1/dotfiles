@@ -168,6 +168,7 @@
     gnomeExtensions.just-perfection
     # CLI tools.
     wl-clipboard
+    unstable.starship
     gnutar
     gzip
     xz
