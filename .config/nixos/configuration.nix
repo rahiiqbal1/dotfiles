@@ -98,6 +98,16 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  # Enable and configure zsh.
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    # plugins = [
+    # ];
+  };
     
   # X11:
   # Enable the X11 windowing system.
