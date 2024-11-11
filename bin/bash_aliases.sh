@@ -1,4 +1,4 @@
-alias aliases = 'cat ~/dotfiles/bin/bash_aliases.sh'
+alias aliases='cat ~/dotfiles/bin/bash_aliases.sh'
 alias nvdriver='cat /sys/module/nvidia/version'
 alias rebuild='sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos'
 alias sysconf='cd ~/dotfiles/.config/nixos'
