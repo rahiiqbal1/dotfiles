@@ -28,11 +28,13 @@ return {
         dependencies = {"nvim-lua/plenary.nvim"},
     },
     
-    {
-        "nvim-lualine/lualine.nvim",
-        dependencies = {"nvim-tree/nvim-web-devicons"},
-    },
+    -- {
+    --     "nvim-lualine/lualine.nvim",
+    --     dependencies = {"nvim-tree/nvim-web-devicons"},
+    -- },
     
+    -- "rebelot/heirline.nvim",
+
     "mbbill/undotree",
     
     "tpope/vim-fugitive",
