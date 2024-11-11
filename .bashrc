@@ -122,4 +122,4 @@ set -o vi
 
 source lfcd.sh
 source startnvim.sh
-source bash_aliases
+source bash_aliases.sh
