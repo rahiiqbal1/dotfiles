@@ -122,6 +122,7 @@
     orca
     gnome-text-editor
     gnome-connections
+    gnome.gnome-disk-utility
     gnome.gnome-system-monitor
     gnome.baobab
     gnome.simple-scan
@@ -170,7 +171,6 @@
     # CLI tools.
     wl-clipboard
     unstable.starship
-    htop
     btop
     gnutar
     gzip
