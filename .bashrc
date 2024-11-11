@@ -121,7 +121,6 @@ eval "$(starship init bash)"
 eval "$(fzf --bash)"
 
 source lfcd.sh
-source startnvim.sh
 source bash_aliases.sh
 source sw.sh
 
