@@ -118,11 +118,12 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(starship init bash)"
-
-# entering vi mode by default
-set -o vi
+eval "$(fzf --bash)"
 
 source lfcd.sh
 source startnvim.sh
 source bash_aliases.sh
 source sw.sh
+
+# entering vi mode by default
+set -o vi

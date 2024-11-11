@@ -172,6 +172,7 @@
     wl-clipboard
     unstable.starship
     btop
+    unstable.fzf
     gnutar
     gzip
     xz
