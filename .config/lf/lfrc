@@ -108,3 +108,8 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+set drawbox true
+set hidden true
+set incsearch true
+set tabstop 4
