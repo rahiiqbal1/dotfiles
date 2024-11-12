@@ -38,8 +38,8 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    # Latest kernel.
-    boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+    # # Latest kernel and drivers.
+    # boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
     # Stuff for NVIDIA drivers and card.
     hardware.opengl = {
