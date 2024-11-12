@@ -151,13 +151,6 @@
     ];
     # Also check the GNOME triple-buffering overlay defined in the nixpkgs.overlays variable.
 
-    # programs.hyprland = {
-    #     enable = true;
-    #     xwayland.enable = true;
-    #     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    #     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    # };
-    
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
     
@@ -181,13 +174,6 @@
         gnomeExtensions.pop-shell
         gnomeExtensions.just-perfection
         gnomeExtensions.hide-cursor
-        # # For Hyprland.
-        # waybar
-        # mako
-        # libnotify 
-        # swww
-        # kitty
-        # wofi
         # CLI tools.
         wl-clipboard
         unstable.starship
