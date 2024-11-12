@@ -194,7 +194,6 @@
         EDITOR = "nvim";
         SUDO_EDITOR = "nvim";
         NIXOS_OZONE_WL = "1"; # Hint to electron apps to use wayland
-        # WLR_NO_HARDWARE_CURSORS = "1"; # If cursor becomes invisible on wayland
     };
 
     # Enable the OpenSSH daemon.
