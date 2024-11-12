@@ -167,6 +167,7 @@
         gnome3.gnome-tweaks
         gnomeExtensions.pop-shell
         gnomeExtensions.just-perfection
+        gnomeExtensions.hide-cursor
         # CLI tools.
         wl-clipboard
         unstable.starship
