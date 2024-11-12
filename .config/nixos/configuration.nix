@@ -38,6 +38,9 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
+    # Latest kernel.
+    boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+
     # Stuff for NVIDIA drivers and card.
     hardware.opengl = {
         enable = true;
@@ -49,14 +52,7 @@
         powerManagement.finegrained = false;
         open = false;
         nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-            version = "555.58";
-            sha256_64bit = "sha256-bXvcXkg2kQZuCNKRZM5QoTaTjF4l2TtrsKUvyicj5ew=";
-            sha256_aarch64 = "sha256-7XswQwW1iFP4ji5mbRQ6PVEhD4SGWpjUJe1o8zoXYRE=";
-            openSha256 = "sha256-hEAmFISMuXm8tbsrB+WiUcEFuSGRNZ37aKWvf0WJ2/c=";
-            settingsSha256 = "sha256-vWnrXlBCb3K5uVkDFmJDVq51wrCoqgPF03lSjZOuU8M=";
-            persistencedSha256 = "sha256-lyYxDuGDTMdGxX3CaiWUh1IQuQlkI2hPEs5LI20vEVw=";
-        };
+        package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
 
     # Networking.
@@ -112,7 +108,10 @@
     # (See environment NIXOS_OZONE_WL variable set later).
 
     # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = true;
+    services.xserver.displayManager.gdm = {
+        enable = true;
+        wayland = true;
+    };
     services.xserver.desktopManager.gnome.enable = true;
     environment.gnome.excludePackages = with pkgs; [
         gnome-photos
@@ -144,6 +143,13 @@
         gnome.atomix
     ];
     # Also check the GNOME triple-buffering overlay defined in the nixpkgs.overlays variable.
+
+    # programs.hyprland = {
+    #     enable = true;
+    #     xwayland.enable = true;
+    #     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    # };
     
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
@@ -168,6 +174,13 @@
         gnomeExtensions.pop-shell
         gnomeExtensions.just-perfection
         gnomeExtensions.hide-cursor
+        # # For Hyprland.
+        # waybar
+        # mako
+        # libnotify 
+        # swww
+        # kitty
+        # wofi
         # CLI tools.
         wl-clipboard
         unstable.starship
@@ -198,6 +211,7 @@
         EDITOR = "nvim";
         SUDO_EDITOR = "nvim";
         NIXOS_OZONE_WL = "1"; # Hint to electron apps to use wayland
+        # WLR_NO_HARDWARE_CURSORS = "1"; # If cursor becomes invisible on wayland
     };
 
     # Enable the OpenSSH daemon.
