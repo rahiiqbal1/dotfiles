@@ -171,6 +171,7 @@
         gnomeExtensions.hide-cursor
         gnomeExtensions.dash-to-panel
         gnomeExtensions.space-bar
+        gnomeExtensions.appindicator
         # CLI tools.
         gzip
         xz
