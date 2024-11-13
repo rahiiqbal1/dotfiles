@@ -43,8 +43,8 @@ format = '[$user ]($style)'
 [nix_shell]
 disabled = false
 style = "bold fg:color_purple"
-symbol = ""
-format = "[$state $symbol $name ]($style)in "
+symbol = " "
+format = "[$symbol $state $name ]($style)in "
 
 [directory]
 style = "bold fg:color_yellow"
