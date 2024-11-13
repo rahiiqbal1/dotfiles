@@ -168,7 +168,7 @@
     environment.systemPackages = with pkgs; [
         # For GNOME.
         gnome3.gnome-tweaks
-        gnomeExtensions.pop-shell
+        unstable.gnomeExtensions.pop-shell
         gnomeExtensions.just-perfection
         gnomeExtensions.hide-cursor
         gnomeExtensions.dash-to-panel
