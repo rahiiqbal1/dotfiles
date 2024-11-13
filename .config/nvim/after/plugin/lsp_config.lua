@@ -32,6 +32,7 @@ require("lspconfig").lua_ls.setup({})
 require("lspconfig").nil_ls.setup({})
 require("lspconfig").pyright.setup({})
 require("lspconfig").zls.setup({})
+require("lspconfig").clangd.setup({})
 require("lspconfig").ltex.setup({})
 
 -- Setting up autocompletion.
@@ -49,3 +50,14 @@ cmp.setup({
         ['<cr>'] = cmp.mapping.confirm({ select = true }),
     }),
 })
+
+-- Some stuff to make boxes look nicer.
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {border = 'rounded'}
+)
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {border = 'rounded'}
+)
