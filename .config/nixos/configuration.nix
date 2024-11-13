@@ -195,8 +195,9 @@
         gh
         neofetch
         # Apps.
-        nerdfonts
         unstable.foot
+        unstable.alacritty
+        nerdfonts
         unstable.neovim
         unstable.lf
         firefox
@@ -210,7 +211,7 @@
         EDITOR = "nvim";
         SUDO_EDITOR = "nvim";
         # NIXOS_OZONE_WL = "1"; # Hint to electron apps to use wayland
-        MUTTER_DEBUG_DISABLE_HW_CURSORS = 1;
+        # MUTTER_DEBUG_DISABLE_HW_CURSORS = 1; # Helps with cursor lag on gnome wayland.
     };
 
     # Enable the OpenSSH daemon.
