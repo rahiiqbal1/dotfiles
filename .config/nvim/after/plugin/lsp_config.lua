@@ -32,6 +32,7 @@ require("lspconfig").lua_ls.setup({})
 require("lspconfig").nil_ls.setup({})
 require("lspconfig").pyright.setup({})
 require("lspconfig").zls.setup({})
+require("lspconfig").ltex.setup({})
 
 -- Setting up autocompletion.
 local cmp = require("cmp")
