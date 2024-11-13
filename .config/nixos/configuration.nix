@@ -169,6 +169,8 @@
         gnomeExtensions.pop-shell
         gnomeExtensions.just-perfection
         gnomeExtensions.hide-cursor
+        gnomeExtensions.dash-to-panel
+        gnomeExtensions.space-bar
         # CLI tools.
         gzip
         xz
