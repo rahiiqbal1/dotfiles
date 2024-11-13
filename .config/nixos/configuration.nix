@@ -170,7 +170,6 @@
         gnome3.gnome-tweaks
         unstable.gnomeExtensions.pop-shell
         gnomeExtensions.just-perfection
-        gnomeExtensions.hide-cursor
         gnomeExtensions.dash-to-panel
         gnomeExtensions.space-bar
         gnomeExtensions.appindicator
