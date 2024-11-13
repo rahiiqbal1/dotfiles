@@ -173,7 +173,9 @@
         gnomeExtensions.space-bar
         gnomeExtensions.appindicator
         gnomeExtensions.blur-my-shell
-        colloid-gtk-theme
+        gnomeExtensions.color-picker
+        unstable.gnomeExtensions.rounded-window-corners-reborn
+        (colloid-gtk-theme.override { tweaks = [ "gruvbox" "rimless" "normal" ]; themeVariants = [ "grey" ]; })
         colloid-icon-theme
         # CLI tools.
         gzip
