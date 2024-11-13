@@ -138,6 +138,7 @@
         gnome.gnome-clocks
         gnome.gnome-contacts
         gnome.gnome-maps
+        gnome.gnome-weather
         gnome.gnome-logs
         gnome.totem
         gnome.tali
