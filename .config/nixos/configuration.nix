@@ -193,6 +193,9 @@
         ripgrep
         gh
         neofetch
+        # LSPs.
+        lua-language-server
+        nil
         # Apps.
         unstable.foot
         unstable.alacritty
