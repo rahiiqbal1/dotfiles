@@ -192,6 +192,8 @@
         firefox
     ];
 
+    programs.steam.enable = true;
+
     # Set environment variables.
     environment.variables = {
         EDITOR = "nvim";
