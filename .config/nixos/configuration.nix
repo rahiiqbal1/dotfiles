@@ -64,13 +64,10 @@
     };
 
     # Networking.
-    # Enable networking
+    # Enable networking.
     networking.networkmanager.enable = true;
     networking.hostName = "nixos"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    # Configure network proxy if necessary
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Set your time zone.
     time.timeZone = "Europe/London";
@@ -115,7 +112,7 @@
     # Set environment variable to hint to electron apps to use wayland.
     # (See environment NIXOS_OZONE_WL variable set later).
 
-    # Enable the GNOME Desktop Environment.
+    # Enable gdm and GNOME.
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
     environment.gnome.excludePackages = with pkgs; [
