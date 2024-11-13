@@ -178,6 +178,7 @@
         (colloid-gtk-theme.override { tweaks = [ "gruvbox" "rimless" "normal" ]; themeVariants = [ "grey" ]; })
         colloid-icon-theme
         # CLI tools.
+        gcc # Neovim needs it for something to do with file type checking I think.
         gzip
         xz
         wget
