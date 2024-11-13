@@ -173,19 +173,17 @@
         gnomeExtensions.just-perfection
         gnomeExtensions.hide-cursor
         # CLI tools.
+        gzip
+        xz
+        wget
+        stow
+        gparted
+        git
         wl-clipboard
         unstable.starship
         btop
         unstable.fzf
         gnutar
-        gzip
-        xz
-        gcc
-        efibootmgr
-        wget
-        stow
-        gparted
-        git
         ripgrep
         gh
         neofetch
