@@ -40,22 +40,13 @@ return {
     "tpope/vim-fugitive",
     
     -- LSP stuff.
-    "stevearc/dressing.nvim",
+    "neovim/nvim-lspconfig",
+    "stevearc/dressing.nvim", -- not just for LSP but partially
     "hrsh7th/nvim-cmp", -- completion plugin
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
     "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lua",
-    -- snippets
-    "L3MON4D3/LuaSnip", -- snippet engine
-    "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    "rafamadriz/friendly-snippets", -- useful snippets
-    -- {
-    --     "williamboman/mason.nvim",
-    --     "williamboman/mason-lspconfig.nvim",
-    --     "neovim/nvim-lspconfig",
-    -- },
-    -- "VonHeikemen/lsp-zero.nvim",
+    -- "hrsh7th/cmp-nvim-lua",
     
     "chentoast/marks.nvim",
     

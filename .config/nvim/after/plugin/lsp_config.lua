@@ -1,55 +1,50 @@
--- local lsp_zero = require('lsp-zero')
+-- Add cmp_nvim_lsp capabilities settings to lspconfig. Should be executed before any LS 
+-- configuration.
+local lspconfig_defaults = require("lspconfig").util.default_config
+lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+    "force",
+    lspconfig_defaults.capabilities,
+    require("cmp_nvim_lsp").default_capabilities()
+)
 
--- lsp_zero.on_attach(function(client, bufnr)
---   local opts = {buffer = bufnr, remap = false}
+-- Stuff in here only works if there is a LS attached to the buffer.
+vim.api.nvim_create_autocmd("LspAttach", {
+    desc = "LSP keybindings",
+    callback = function(event)
+        local opts = {buffer = event.buf}
 
---   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
---   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
---   vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
---   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
---   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
---   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
---   vim.keymap.set("n", "<leader>fe", function() vim.diagnostic.setloclist() end, opts)
---   vim.keymap.set("n", "<leader>pca", function() vim.lsp.buf.code_action() end, opts)
---   vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
---   vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
---   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
--- end)
+        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+        vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
+        vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
+        vim.keymap.set("n", "<leader>fe", function() vim.diagnostic.setloclist() end, opts)
+        vim.keymap.set("n", "<leader>pca", function() vim.lsp.buf.code_action() end, opts)
+        vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
+        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    end,
+})
 
--- -- to learn how to use mason.nvim with lsp-zero
--- -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
--- require('mason').setup({})
--- require('mason-lspconfig').setup({
---   ensure_installed = {'clangd', 'pyright', 'lua_ls'},
---   handlers = {
---     lsp_zero.default_setup,
---     lua_ls = function()
---       local lua_opts = lsp_zero.nvim_lua_ls()
---       require('lspconfig').lua_ls.setup(lua_opts)
---     end,
---   }
--- })
+-- Add available language servers here.
+require("lspconfig").lua_ls.setup({})
+require("lspconfig").nil_ls.setup({})
+require("lspconfig").pyright.setup({})
+require("lspconfig").zls.setup({})
 
--- local cmp = require('cmp')
--- local cmp_select = {behavior = cmp.SelectBehavior.Select}
-
--- -- this is the function that loads the extra snippets to luasnip
--- -- from rafamadriz/friendly-snippets
--- require('luasnip.loaders.from_vscode').lazy_load()
-
--- cmp.setup({
---   sources = {
---     {name = 'path'},
---     {name = 'nvim_lsp'},
---     {name = 'nvim_lua'},
---     {name = 'luasnip', keyword_length = 2},
---     {name = 'buffer', keyword_length = 3},
---   },
---   formatting = lsp_zero.cmp_format({details = false}),
---   mapping = cmp.mapping.preset.insert({
---     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
---     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
---     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
---     ['<C-Space>'] = cmp.mapping.complete(),
---   }),
--- })
+-- Setting up autocompletion.
+local cmp = require("cmp")
+cmp.setup({
+    sources = { {name = "nvim_lsp"}, },
+    snippet = {
+        expand = function(args)
+            vim.snippet.expand(args.body)
+        end,
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
+        ['<C-j>'] = cmp.mapping.select_next_item(),
+        ['<cr>'] = cmp.mapping.confirm({ select = true }),
+    }),
+})
