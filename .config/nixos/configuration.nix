@@ -172,6 +172,9 @@
         gnomeExtensions.dash-to-panel
         gnomeExtensions.space-bar
         gnomeExtensions.appindicator
+        gnomeExtensions.blur-my-shell
+        colloid-gtk-theme
+        colloid-icon-theme
         # CLI tools.
         gzip
         xz
