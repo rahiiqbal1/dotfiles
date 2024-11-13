@@ -184,6 +184,7 @@
         stow
         gparted
         git
+        xclip
         wl-clipboard
         unstable.starship
         btop
