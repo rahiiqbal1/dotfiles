@@ -13,10 +13,11 @@ function mkflk {
         unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
-    outputs = { nixpkgs, ... }@inputs:
+    outputs = { nixpkgs, unstable, ... }@inputs:
         let
             system = "x86_64-linux";
             pkgs = nixpkgs.legacyPackages.${system};
+            pkgsUnstable = unstable.legacyPackages.${system};
         in {
             devShells.${system}.default = pkgs.mkShell {
                 name = "";
