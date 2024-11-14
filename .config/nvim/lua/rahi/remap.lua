@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>")
+vim.keymap.set("n", "<leader>pv", "<cmd>Oil .<CR>")
+vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")  -- J and K move block in visual mode
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

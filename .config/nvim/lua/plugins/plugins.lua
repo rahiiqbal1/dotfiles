@@ -64,4 +64,10 @@ return {
     -- },
     
     "lukas-reineke/indent-blankline.nvim",
+
+    {
+        "stevearc/oil.nvim",
+        opts = {},
+        dependencies = {"nvim-tree/nvim-web-devicons"},
+    }
 }
