@@ -56,7 +56,6 @@ spotify/
 .config/okularrc
 .config/Trolltech.conf
 .config/user-dirs.*
-.config/nixos/hardware-configuration.nix
 
 .fehbg
 .gtkrc-2.0
