@@ -68,7 +68,7 @@
     # Networking.
     # Enable networking.
     networking.networkmanager.enable = true;
-    networking.hostName = "nixos"; # Define your hostname.
+    networking.hostName = "nixos-dsk"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Set your time zone.
