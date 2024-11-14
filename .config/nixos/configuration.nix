@@ -46,7 +46,8 @@
         enable = true;
     };
     services.xserver.videoDrivers = ["nvidia"];
-    boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
+    # This stops the detection of a display which isn't there.
+    boot.kernelParams = [ "nvidia_drm.fbdev=1" ]; 
     hardware.nvidia = {
         modesetting.enable = true;
         powerManagement.enable = false;
