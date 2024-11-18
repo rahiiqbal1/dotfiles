@@ -177,6 +177,7 @@
         # Apps.
         unstable.foot
         unstable.alacritty
+        unstable.tmux
         nerdfonts
         unstable.neovim
         unstable.lf

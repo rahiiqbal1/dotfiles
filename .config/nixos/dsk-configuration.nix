@@ -1,6 +1,4 @@
 { config, pkgs, inputs, ... }: {
-    networking.hostName = "nixos-dsk";
-
     # # Overlay to use unstable repo. Already defined in configuration.nix.
     # nixpkgs.overlays = [
     #     (final: _: {

@@ -14,18 +14,19 @@
                 modules = [
                     ./configuration.nix
                     ./dsk-configuration.nix
+                    { networking.hostName = "nixos-dsk"; }
                 ];
             };
 
-#             nixos-lap = nixpkgs.lib.nixosSystem {
-#                 system = "x86_64-linux";
-#                 specialArgs = { inherit inputs; };
-#                 modules = [
-#                     ./configuration.nix
-#                     ./lap_configuration.nix
-#                     { networking.hostname = "nixos-lap"; }
-#                 ];
-#             };
+            nixos-lap = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = { inherit inputs; };
+                modules = [
+                    ./configuration.nix
+                    ./lap-configuration.nix
+                    { networking.hostName = "nixos-lap"; }
+                ];
+            };
         };
     };
 }
