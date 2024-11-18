@@ -38,6 +38,7 @@ libreoffice/4/user/registrymodifications.xcu
 qalculate/
 rclone/
 spotify/
+.tmux/plugins
 
 .config/gtk-3.0/settings.ini
 .config/gtk-4.0/settings.ini
@@ -46,6 +47,7 @@ spotify/
 .config/gnome-initial-setup-done
 .config/gtkrc
 .config/gtkrc-2.0
+.config/tmux/plugins
 .config/kactivitymanagerdrc
 .config/kglobalshortcutsrc
 .config/kleopatrarc
