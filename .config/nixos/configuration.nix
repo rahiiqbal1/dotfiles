@@ -4,11 +4,6 @@
 
 { config, pkgs, inputs, ... }: {
 
-    imports = [ 
-        # Include the results of the hardware scan.
-        ./hardware-configuration.nix
-    ];
-
     # Overlay to use unstable branch as an attribute of pkgs.
     nixpkgs.overlays = [
         (final: _: {

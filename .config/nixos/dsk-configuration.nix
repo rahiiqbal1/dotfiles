@@ -1,4 +1,10 @@
 { config, pkgs, inputs, ... }: {
+
+    imports = [ 
+        # Include the results of the hardware scan.
+        ./dsk-hardware-configuration.nix
+    ];
+
     # # Overlay to use unstable repo. Already defined in configuration.nix.
     # nixpkgs.overlays = [
     #     (final: _: {
