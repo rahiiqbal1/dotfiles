@@ -13,7 +13,7 @@
                 specialArgs = { inherit inputs; };
                 modules = [
                     ./configuration.nix
-                    ./dsk-configuration.nix
+                    ./dsk/dsk-configuration.nix
                     { networking.hostName = "nixos-dsk"; }
                 ];
             };
@@ -23,7 +23,7 @@
                 specialArgs = { inherit inputs; };
                 modules = [
                     ./configuration.nix
-                    ./lap-configuration.nix
+                    ./lap/lap-configuration.nix
                     { networking.hostName = "nixos-lap"; }
                 ];
             };
