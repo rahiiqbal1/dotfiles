@@ -144,6 +144,7 @@
         gnomeExtensions.just-perfection
         gnomeExtensions.dash-to-panel
         gnomeExtensions.space-bar
+        gnomeExtensions.hide-cursor
         gnomeExtensions.appindicator
         gnomeExtensions.blur-my-shell
         gnomeExtensions.color-picker
