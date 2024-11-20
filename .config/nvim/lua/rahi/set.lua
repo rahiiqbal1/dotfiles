@@ -1,6 +1,6 @@
 vim.opt.relativenumber = true
 
--- vim.cmd("set noshowmode")
+vim.cmd("set noshowmode")
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
