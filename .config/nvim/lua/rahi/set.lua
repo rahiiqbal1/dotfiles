@@ -27,3 +27,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "101"
 
 vim.g.zig_fmt_autosave = 0
+
+vim.opt.textwidth = 100
+vim.opt.formatoptions = "tcqj"
