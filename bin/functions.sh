@@ -3,6 +3,10 @@ lfcd () {
     cd "$(command lf -print-last-dir "$@")"
 }
 
+function mkcd {
+    mkdir "$1" && cd "$1";
+}
+
 function mkflk {
     touch "$1"
     echo '{
