@@ -3,6 +3,10 @@ lfcd () {
     builtin cd "$(command lf -print-last-dir "$@")"
 }
 
+function cd {
+    builtin cd "$1" && ls -A;
+}
+
 function mkcd {
     mkdir "$1" && cd "$1";
 }
