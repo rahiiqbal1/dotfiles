@@ -4,7 +4,11 @@ lfcd () {
 }
 
 function cd {
-    builtin cd "$1" && ls -A;
+    if [ "$1" == "" ]; then
+        builtin cd $HOME && ls -A;
+    else
+        builtin cd "$1" && ls -A;
+    fi
 }
 
 function mkcd {
