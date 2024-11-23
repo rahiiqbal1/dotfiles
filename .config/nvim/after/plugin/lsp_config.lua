@@ -28,12 +28,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Add available language servers here.
-require("lspconfig").lua_ls.setup({})
-require("lspconfig").nil_ls.setup({})
-require("lspconfig").pyright.setup({})
-require("lspconfig").zls.setup({})
-require("lspconfig").clangd.setup({})
-require("lspconfig").ltex.setup({})
+local lspconfig = require("lspconfig")
+lspconfig.lua_ls.setup({})
+lspconfig.nil_ls.setup({})
+lspconfig.pyright.setup({})
+lspconfig.clangd.setup({})
+lspconfig.zls.setup({
+    settings = {
+        enable_build_on_save = true,
+        build_on_save_step = "check",
+    }
+})
+-- require("lspconfig").ltex.setup({})
 
 -- Setting up autocompletion.
 local cmp = require("cmp")
