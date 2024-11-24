@@ -26,6 +26,10 @@ color_orange = '#e78a4e'
 color_purple = '#d3869b'
 color_red = '#ea6962'
 color_yellow = '#d8a657'
+color_insert = '#a9b665'
+color_normal = '#a89984'
+color_visual = '#ea6962'
+color_replace = '#d8a657'
 
 [os]
 disabled = true
@@ -67,9 +71,9 @@ disabled = true
 
 [character]
 disabled = false
-success_symbol = '[❯](bold fg:color_green)'
-error_symbol = '[❯](bold fg:color_red)'
-vimcmd_symbol = '[ ](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[ ](bold fg:color_purple)'
-vimcmd_replace_symbol = '[ ](bold fg:color_purple)'
-vimcmd_visual_symbol = '[ ](bold fg:color_yellow)'
+success_symbol = '[󰫶](bold fg:color_insert)'
+error_symbol = '[󰫶](bold fg:color_insert)'
+vimcmd_symbol = '[󰫻](bold fg:color_normal)'
+vimcmd_replace_one_symbol = '[󰫿](bold fg:color_replace)'
+vimcmd_replace_symbol = '[󰫿](bold fg:color_replace)'
+vimcmd_visual_symbol = '[󰬃](bold fg:color_visual)'

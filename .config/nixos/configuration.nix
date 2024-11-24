@@ -160,13 +160,18 @@
         git
         xclip
         wl-clipboard
-        unstable.starship
-        btop
-        unstable.fzf
-        gnutar
-        ripgrep
         gh
         neofetch
+        # Shell.
+        unstable.starship
+        btop
+        gnutar
+        ripgrep
+        unstable.fzf # Required for fzf-fish
+        unstable.fd # Required for fzf-fish
+        unstable.bat # Required for fzf-fish
+        fishPlugins.fzf-fish
+        fishPlugins.gruvbox
         # LSPs.
         lua-language-server
         nil
@@ -181,6 +186,16 @@
         spotify
     ];
 
+    programs.fish.enable = true;
+    programs.bash = {
+        interactiveShellInit = ''
+            if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+            then
+                shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+                exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+            fi
+        '';
+    };
     programs.steam.enable = true;
 
     # Set environment variables.
