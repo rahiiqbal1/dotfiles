@@ -23,6 +23,7 @@ function mkflk
 
                 # Set any shell commands to execute on startup.
                 shellHook = '\'''\''
+                exec fish
                 '\'''\'';
 
                 # Set project specific environment variables below.
