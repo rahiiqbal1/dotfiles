@@ -24,3 +24,4 @@ abbr gr -a git restore
 abbr gpsh -a git push
 abbr gpl -a git pull
 abbr grep -a rg
+abbr --add dotdot --regex '^\.\.+$' --function multicd
