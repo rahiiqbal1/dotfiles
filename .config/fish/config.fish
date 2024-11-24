@@ -3,6 +3,7 @@ if status is-interactive
     fish_vi_key_bindings
     bind -M insert \cf accept-autosuggestion
     bind -M insert \ef forward-word
+    bind -M insert \cg expand-abbr
 
     starship init fish | source
 
