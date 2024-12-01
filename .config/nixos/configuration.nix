@@ -140,7 +140,7 @@
     environment.systemPackages = with pkgs; [
         # For GNOME.
         gnome3.gnome-tweaks
-        unstable.gnomeExtensions.pop-shell
+        gnomeExtensions.pop-shell
         gnomeExtensions.just-perfection
         gnomeExtensions.dash-to-panel
         gnomeExtensions.space-bar
