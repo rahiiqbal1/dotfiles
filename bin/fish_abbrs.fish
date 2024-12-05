@@ -22,6 +22,7 @@ abbr gl -a git log
 abbr gd -a git diff
 abbr gr -a git restore
 abbr gpsh -a git push
+abbr gru -a git remote update
 abbr gpl -a git pull
 abbr grep -a rg
 abbr --add dotdot --regex '^\.\.+$' --function multicd
