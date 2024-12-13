@@ -176,7 +176,6 @@
         lua-language-server
         nil
         # Apps.
-        unstable.ventoy-full
         unstable.foot
         unstable.alacritty
         unstable.tmux
