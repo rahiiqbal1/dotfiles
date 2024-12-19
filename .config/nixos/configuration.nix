@@ -196,7 +196,6 @@
             fi
         '';
     };
-    programs.steam.enable = true;
 
     # Set environment variables.
     environment.variables = {
