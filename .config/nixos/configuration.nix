@@ -179,6 +179,7 @@
         unstable.foot
         unstable.alacritty
         unstable.tmux
+        popsicle
         nerdfonts
         unstable.neovim
         unstable.lf
