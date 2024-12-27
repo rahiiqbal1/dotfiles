@@ -141,11 +141,11 @@
         # For GNOME.
         gnome3.gnome-tweaks
         gnomeExtensions.pop-shell
-        # gnomeExtensions.just-perfection
+        gnomeExtensions.just-perfection
         # gnomeExtensions.dash-to-panel
-        # gnomeExtensions.space-bar
-        # gnomeExtensions.hide-cursor
-        # gnomeExtensions.appindicator
+        gnomeExtensions.space-bar
+        gnomeExtensions.hide-cursor
+        gnomeExtensions.appindicator
         gnomeExtensions.blur-my-shell
         # gnomeExtensions.color-picker
         # (colloid-gtk-theme.override { tweaks = [ "gruvbox" "rimless" "normal" ]; themeVariants = [ "grey" ]; })
