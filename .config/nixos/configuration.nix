@@ -95,7 +95,7 @@
         orca
         gnome-text-editor
         gnome-connections
-        gnome.gnome-disk-utility
+        gnome-disk-utility
         gnome.gnome-system-monitor
         gnome.baobab
         gnome.simple-scan
