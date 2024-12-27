@@ -141,15 +141,15 @@
         # For GNOME.
         gnome3.gnome-tweaks
         gnomeExtensions.pop-shell
-        gnomeExtensions.just-perfection
-        gnomeExtensions.dash-to-panel
-        gnomeExtensions.space-bar
-        gnomeExtensions.hide-cursor
-        gnomeExtensions.appindicator
+        # gnomeExtensions.just-perfection
+        # gnomeExtensions.dash-to-panel
+        # gnomeExtensions.space-bar
+        # gnomeExtensions.hide-cursor
+        # gnomeExtensions.appindicator
         gnomeExtensions.blur-my-shell
-        gnomeExtensions.color-picker
-        (colloid-gtk-theme.override { tweaks = [ "gruvbox" "rimless" "normal" ]; themeVariants = [ "grey" ]; })
-        colloid-icon-theme
+        # gnomeExtensions.color-picker
+        # (colloid-gtk-theme.override { tweaks = [ "gruvbox" "rimless" "normal" ]; themeVariants = [ "grey" ]; })
+        # colloid-icon-theme
         # CLI tools.
         gcc # Neovim needs it for something to do with file type checking I think.
         gzip
