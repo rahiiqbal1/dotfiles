@@ -147,7 +147,6 @@
         gnomeExtensions.appindicator
         gnomeExtensions.blur-my-shell
         gnomeExtensions.color-picker
-        unstable.gnomeExtensions.rounded-window-corners-reborn
         # CLI tools.
         gcc # Neovim needs it for something to do with file type checking I think.
         gzip
