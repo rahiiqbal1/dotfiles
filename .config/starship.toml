@@ -48,7 +48,7 @@ format = '[$user ]($style)'
 disabled = false
 style = "bold fg:color_purple"
 symbol = ""
-format = "[$state $symbol $name ]($style)in "
+format = "[$state $name ]($style)in "
 
 [directory]
 style = "bold fg:color_yellow"
