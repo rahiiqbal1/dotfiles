@@ -1,0 +1,9 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+mouse = false
+scrolloff = 8
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
