@@ -198,8 +198,8 @@
 
     # Set environment variables.
     environment.variables = {
-        EDITOR = "nvim";
-        SUDO_EDITOR = "nvim";
+        EDITOR = "hx";
+        SUDO_EDITOR = "hx";
         # NIXOS_OZONE_WL = "1"; # Hint to electron apps to use wayland
         # MUTTER_DEBUG_DISABLE_HW_CURSORS = 1; # Helps with cursor lag on gnome wayland.
     };
