@@ -4,6 +4,7 @@ theme = "gruvbox"
 line-number = "relative"
 mouse = false
 scrolloff = 8
+auto-format = false
 rulers = [101]
 shell = ["fish"]
 
