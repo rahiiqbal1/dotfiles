@@ -19,3 +19,15 @@ local execute_code = function()
 end
 
 vim.keymap.set('n', '<leader>re', execute_code, {})
+
+local build_execute = function()
+    if vim.bo.filetype == "zig" then
+        local run_cmd = "zig build run"
+        vim.cmd(":w")
+        vim.cmd([[:set sb]])
+        vim.cmd("split | resize 10 | term " .. run_cmd)
+        vim.cmd("startinsert")
+    end
+end
+
+vim.keymap.set('n', '<leader>be', build_execute, {})

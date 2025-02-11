@@ -115,7 +115,8 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- l
 vim.keymap.set("n", "<leader><leader>", function() -- sources current file
     vim.cmd("source")
 
-leader r, saves and executes code
+leader re, saves and executes code
+vim.keymap.set('n', '<leader>be', build_execute, {})
 
 vim.keymap.set("n", "<leader>pm", "<cmd>MarkdownPreview<CR>")
 
