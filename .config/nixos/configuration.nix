@@ -179,7 +179,6 @@
         popsicle
         nerdfonts
         unstable.neovim
-        unstable.helix
         unstable.lf
         firefox
         spotify
