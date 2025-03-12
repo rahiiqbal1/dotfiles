@@ -13,7 +13,39 @@ $git_branch\
 $git_status\
 $line_break$character"""
 
-palette = 'gruvbox_dark'
+palette = 'catppuccin_mocha'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+color_purple = "#cba6f7"
+color_red = "#f38ba8"
+maroon = "#eba0ac"
+color_orange = "#fab387"
+color_yellow = "#f9e2af"
+color_green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+color_aqua = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+color_insert = "#a6e3a1" # Green
+color_normal = '#f5c2e7' # Pink
+color_visual = '#f38ba8' # Red
+color_replace = '#fab387' # Orange
 
 [palettes.gruvbox_dark]
 color_fg0 = '#d4be98'
@@ -51,7 +83,7 @@ symbol = ""
 format = "[$state $name ]($style)in "
 
 [directory]
-style = "bold fg:color_yellow"
+style = "bold fg:color_orange"
 format = "[$path ]($style)"
 truncation_length = 3
 truncation_symbol = ".../"
