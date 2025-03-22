@@ -1,6 +1,6 @@
 abbr nvdriver -a cat /sys/module/nvidia/version
 abbr rebuild -a sudo nixos-rebuild switch --flake ~/dotfiles/.config/nixos
-abbr nd -a nix develop
+abbr nd -a nix develop --command fish
 abbr update -a sudo nix flake update
 abbr lf -a lfcd
 abbr sysconf -a cd ~/dotfiles/.config/nixos
