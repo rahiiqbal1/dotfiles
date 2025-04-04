@@ -180,7 +180,6 @@
         unstable.neovim
         unstable.lf
         firefox
-        spotify
     ];
 
     programs.fish.enable = true;
