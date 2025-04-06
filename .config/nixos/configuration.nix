@@ -175,6 +175,7 @@
         nil
         # Apps.
         unstable.foot
+        unstable.alacritty
         unstable.tmux
         popsicle
         nerdfonts
