@@ -151,6 +151,7 @@
         gcc # Neovim needs it for something to do with file type checking I think.
         gzip
         xz
+        unzip
         wget
         stow
         gparted
