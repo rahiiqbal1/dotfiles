@@ -181,6 +181,7 @@
         unstable.neovim
         unstable.lf
         firefox
+        electrum-ltc
     ];
 
     programs.fish.enable = true;
