@@ -182,6 +182,7 @@
         unstable.lf
         firefox
         electrum-ltc
+        mpv
     ];
 
     programs.fish.enable = true;
