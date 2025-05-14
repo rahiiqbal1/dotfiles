@@ -182,7 +182,7 @@
         unstable.lf
         firefox
         electrum-ltc
-        mpv
+        vlc
     ];
 
     programs.fish.enable = true;
