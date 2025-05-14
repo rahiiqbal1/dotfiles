@@ -112,7 +112,6 @@
         gnome.gnome-maps
         gnome.gnome-weather
         gnome.gnome-logs
-        gnome.totem
         gnome.tali
         gnome.iagno
         gnome.hitori
@@ -182,7 +181,6 @@
         unstable.lf
         firefox
         electrum-ltc
-        vlc
     ];
 
     programs.fish.enable = true;
@@ -200,6 +198,7 @@
     environment.variables = {
         EDITOR = "nvim";
         SUDO_EDITOR = "nvim";
+        QT_QPA_PLATFORM="wayland";
         # NIXOS_OZONE_WL = "1"; # Hint to electron apps to use wayland
         # MUTTER_DEBUG_DISABLE_HW_CURSORS = 1; # Helps with cursor lag on gnome wayland.
     };
