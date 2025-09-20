@@ -33,8 +33,8 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    # Latest kernel and drivers.
-    boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+    # Uncomment for latest kernel and drivers.
+    # boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
     # Networking.
     # Enable networking.
