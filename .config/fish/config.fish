@@ -7,6 +7,8 @@ if status is-interactive
 
     starship init fish | source
 
+    fzf --fish | source
+
     # theme_gruvbox dark medium
 
     function fish_greeting
