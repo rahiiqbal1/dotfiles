@@ -181,6 +181,7 @@
         unstable.lf
         firefox
         electrum-ltc
+        unstable.qbittorrent
     ];
 
     programs.fish.enable = true;
