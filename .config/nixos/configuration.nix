@@ -116,6 +116,7 @@
         gnome.iagno
         gnome.hitori
         gnome.atomix
+        gnome.totem
     ];
     # Also check the GNOME triple-buffering overlay defined in the nixpkgs.overlays variable.
 
@@ -182,6 +183,7 @@
         firefox
         electrum-ltc
         unstable.qbittorrent
+        unstable.vlc
     ];
 
     programs.fish.enable = true;
