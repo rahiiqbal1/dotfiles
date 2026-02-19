@@ -140,22 +140,12 @@
     # Add nerdfonts
     fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
-
     # Add ~/bin/ to PATH.
     environment.homeBinInPath = true;
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
-        # # For GNOME.
-        # gnome3.gnome-tweaks
-        # gnomeExtensions.pop-shell
-        # gnomeExtensions.just-perfection
-        # gnomeExtensions.space-bar
-        # gnomeExtensions.hide-cursor
-        # gnomeExtensions.appindicator
-        # gnomeExtensions.blur-my-shell
-        # gnomeExtensions.color-picker
         # CLI tools.
         gcc # Neovim needs it for something to do with file type checking I think.
         gzip
