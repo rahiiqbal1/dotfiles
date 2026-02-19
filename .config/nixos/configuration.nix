@@ -12,19 +12,22 @@
                 inherit (final) config;
             };
         })
-        # GNOME 46: triple-buffering-v4-46
-        (final: prev: {
-            mutter = prev.mutter.overrideAttrs (old: {
-                src = pkgs.fetchFromGitLab  {
-                    domain = "gitlab.gnome.org";
-                    owner = "vanvugt";
-                    repo = "mutter";
-                    rev = "triple-buffering-v4-46";
-                    hash = "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=";
-                };
-            });
-        })
+        # # GNOME 46: triple-buffering-v4-46
+        # (final: prev: {
+        #     mutter = prev.mutter.overrideAttrs (old: {
+        #         src = pkgs.fetchFromGitLab  {
+        #             domain = "gitlab.gnome.org";
+        #             owner = "vanvugt";
+        #             repo = "mutter";
+        #             rev = "triple-buffering-v4-46";
+        #             hash = "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=";
+        #         };
+        #     });
+        # })
     ];
+
+    # Permitting weird python 313 package to fix install bug :/
+    nixpkgs.config.permittedInsecurePackages = [ "python3.13-ecdsa-0.19.1" ];
 
     # Enable flakes and new CLI.
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -85,40 +88,42 @@
     # Set environment variable to hint to electron apps to use wayland.
     # (See environment NIXOS_OZONE_WL variable set later).
 
+    services.displayManager.cosmic-greeter.enable = true;
+    services.desktopManager.cosmic.enable = true;
     # Enable gdm and GNOME.
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
-    environment.gnome.excludePackages = with pkgs; [
-        gnome-photos
-        gnome-tour
-        gedit
-        orca
-        gnome-text-editor
-        gnome-connections
-        gnome.gnome-disk-utility
-        gnome.gnome-system-monitor
-        gnome.baobab
-        gnome.simple-scan
-        gnome.cheese
-        gnome.yelp
-        gnome.gnome-maps
-        gnome.gnome-music
-        gnome.epiphany
-        gnome.geary
-        gnome.gnome-characters
-        gnome.gnome-calendar
-        gnome.gnome-clocks
-        gnome.gnome-contacts
-        gnome.gnome-maps
-        gnome.gnome-weather
-        gnome.gnome-logs
-        gnome.tali
-        gnome.iagno
-        gnome.hitori
-        gnome.atomix
-        gnome.totem
-    ];
-    # Also check the GNOME triple-buffering overlay defined in the nixpkgs.overlays variable.
+    # services.xserver.displayManager.gdm.enable = true;
+    # services.xserver.desktopManager.gnome.enable = true;
+    # environment.gnome.excludePackages = with pkgs; [
+    #     gnome-photos
+    #     gnome-tour
+    #     gedit
+    #     orca
+    #     gnome-text-editor
+    #     gnome-connections
+    #     gnome.gnome-disk-utility
+    #     gnome.gnome-system-monitor
+    #     gnome.baobab
+    #     gnome.simple-scan
+    #     gnome.cheese
+    #     gnome.yelp
+    #     gnome.gnome-maps
+    #     gnome.gnome-music
+    #     gnome.epiphany
+    #     gnome.geary
+    #     gnome.gnome-characters
+    #     gnome.gnome-calendar
+    #     gnome.gnome-clocks
+    #     gnome.gnome-contacts
+    #     gnome.gnome-maps
+    #     gnome.gnome-weather
+    #     gnome.gnome-logs
+    #     gnome.tali
+    #     gnome.iagno
+    #     gnome.hitori
+    #     gnome.atomix
+    #     gnome.totem
+    # ];
+    # # Also check the GNOME triple-buffering overlay defined in the nixpkgs.overlays variable.
 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
@@ -132,21 +137,25 @@
         ];
     };
 
+    # Add nerdfonts
+    fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+
+
     # Add ~/bin/ to PATH.
     environment.homeBinInPath = true;
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
-        # For GNOME.
-        gnome3.gnome-tweaks
-        gnomeExtensions.pop-shell
-        gnomeExtensions.just-perfection
-        gnomeExtensions.space-bar
-        gnomeExtensions.hide-cursor
-        gnomeExtensions.appindicator
-        gnomeExtensions.blur-my-shell
-        gnomeExtensions.color-picker
+        # # For GNOME.
+        # gnome3.gnome-tweaks
+        # gnomeExtensions.pop-shell
+        # gnomeExtensions.just-perfection
+        # gnomeExtensions.space-bar
+        # gnomeExtensions.hide-cursor
+        # gnomeExtensions.appindicator
+        # gnomeExtensions.blur-my-shell
+        # gnomeExtensions.color-picker
         # CLI tools.
         gcc # Neovim needs it for something to do with file type checking I think.
         gzip
@@ -161,28 +170,28 @@
         gh
         neofetch
         # Shell.
-        unstable.starship
+        starship
         btop
         gnutar
         ripgrep
-        unstable.fzf # Required for fzf-fish
-        unstable.fd # Required for fzf-fish
-        unstable.bat # Required for fzf-fish
+        fzf # Required for fzf-fish
+        fd # Required for fzf-fish
+        bat # Required for fzf-fish
         fishPlugins.fzf-fish
         fishPlugins.gruvbox
         # LSPs.
         lua-language-server
         nil
         # Apps.
-        unstable.foot
-        unstable.tmux
+        foot
+        tmux
         popsicle
-        unstable.neovim
-        unstable.lf
+        neovim
+        lf
         firefox
-        electrum-ltc
-        unstable.qbittorrent
-        unstable.vlc
+        # electrum-ltc
+        qbittorrent
+        vlc
     ];
 
     programs.fish.enable = true;
