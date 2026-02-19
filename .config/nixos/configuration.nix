@@ -6,24 +6,19 @@
 
     # Overlay to use unstable branch as an attribute of pkgs.
     nixpkgs.overlays = [
-        (final: _: {
+        (final: prev: {
             unstable = import inputs.unstable {
                 inherit (final.stdenv.hostPlatform) system;
                 inherit (final) config;
             };
+            # cosmic-comp = prev.cosmic-comp.overrideAttrs (oldAttrs: {
+            #     postPatch = ''
+            #         ${oldAttrs.postPatch or ""}
+            #         find src/shell -type f -name "*.rs -exec sed -i \
+            #         's/Duration::from_millis([0-9]\+)/Duration::from_millis(1)/g' {};
+            #     '';
+            # });
         })
-        # # GNOME 46: triple-buffering-v4-46
-        # (final: prev: {
-        #     mutter = prev.mutter.overrideAttrs (old: {
-        #         src = pkgs.fetchFromGitLab  {
-        #             domain = "gitlab.gnome.org";
-        #             owner = "vanvugt";
-        #             repo = "mutter";
-        #             rev = "triple-buffering-v4-46";
-        #             hash = "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=";
-        #         };
-        #     });
-        # })
     ];
 
     # Permitting weird python 313 package to fix install bug :/
@@ -90,40 +85,10 @@
 
     services.displayManager.cosmic-greeter.enable = true;
     services.desktopManager.cosmic.enable = true;
-    # Enable gdm and GNOME.
-    # services.xserver.displayManager.gdm.enable = true;
-    # services.xserver.desktopManager.gnome.enable = true;
-    # environment.gnome.excludePackages = with pkgs; [
-    #     gnome-photos
-    #     gnome-tour
-    #     gedit
-    #     orca
-    #     gnome-text-editor
-    #     gnome-connections
-    #     gnome.gnome-disk-utility
-    #     gnome.gnome-system-monitor
-    #     gnome.baobab
-    #     gnome.simple-scan
-    #     gnome.cheese
-    #     gnome.yelp
-    #     gnome.gnome-maps
-    #     gnome.gnome-music
-    #     gnome.epiphany
-    #     gnome.geary
-    #     gnome.gnome-characters
-    #     gnome.gnome-calendar
-    #     gnome.gnome-clocks
-    #     gnome.gnome-contacts
-    #     gnome.gnome-maps
-    #     gnome.gnome-weather
-    #     gnome.gnome-logs
-    #     gnome.tali
-    #     gnome.iagno
-    #     gnome.hitori
-    #     gnome.atomix
-    #     gnome.totem
-    # ];
-    # # Also check the GNOME triple-buffering overlay defined in the nixpkgs.overlays variable.
+    services.system76-scheduler.enable = true;
+    environment.cosmic.excludePackages = with pkgs; [
+        cosmic-edit
+    ];
 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
@@ -181,7 +146,6 @@
         firefox
         # electrum-ltc
         qbittorrent
-        vlc
     ];
 
     programs.fish.enable = true;
