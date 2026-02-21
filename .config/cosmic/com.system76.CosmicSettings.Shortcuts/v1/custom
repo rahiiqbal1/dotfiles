@@ -3,8 +3,14 @@
         modifiers: [
             Super,
         ],
+        key: "b",
+    ): System(WorkspaceOverview),
+    (
+        modifiers: [
+            Super,
+        ],
         key: "q",
-    ): Disable,
+    ): Close,
     (
         modifiers: [
             Alt,
@@ -15,18 +21,6 @@
         modifiers: [
             Super,
         ],
-        key: "c",
-    ): Close,
-    (
-        modifiers: [
-            Super,
-        ],
         key: "w",
     ): System(WebBrowser),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "b",
-    ): System(WorkspaceOverview),
 }
