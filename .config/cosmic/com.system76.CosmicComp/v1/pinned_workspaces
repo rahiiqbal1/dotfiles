@@ -11,7 +11,7 @@
                 model_year: None,
             )),
         ),
-        tiling_enabled: false,
+        tiling_enabled: true,
         id: Some("ae5f5c"),
     ),
     (
@@ -26,7 +26,7 @@
                 model_year: None,
             )),
         ),
-        tiling_enabled: false,
+        tiling_enabled: true,
         id: Some("198f90d"),
     ),
     (
@@ -41,7 +41,7 @@
                 model_year: None,
             )),
         ),
-        tiling_enabled: false,
+        tiling_enabled: true,
         id: Some("2be9c"),
     ),
     (
@@ -56,7 +56,7 @@
                 model_year: None,
             )),
         ),
-        tiling_enabled: false,
+        tiling_enabled: true,
         id: Some("1b8679c"),
     ),
     (
@@ -71,7 +71,7 @@
                 model_year: None,
             )),
         ),
-        tiling_enabled: false,
+        tiling_enabled: true,
         id: Some("f37aa8"),
     ),
     (
@@ -86,7 +86,7 @@
                 model_year: None,
             )),
         ),
-        tiling_enabled: false,
+        tiling_enabled: true,
         id: Some("10c52f1"),
     ),
 ]
